@@ -35,5 +35,12 @@ th, td {
   font-size: 1.5rem;
   color: white;
   border-radius: 2rem;
+}
 
+.completed {
+  color: rgb(106, 174, 5);
+}
+
+.pending {
+  color: rgba(129, 129, 38, 0.959);
 }

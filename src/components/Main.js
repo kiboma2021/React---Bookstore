@@ -36,7 +36,7 @@ const Main = () => {
             </thead>
             <tbody>       
             {show && books.map(book =>
-                <tr key={book.id}>
+                <tr key={book.id} className={book.completed?"completed":"pending"}>
                     <td>{book.id}</td>
                     <td>{book.name}</td>
                     <td>{book.description} </td>
