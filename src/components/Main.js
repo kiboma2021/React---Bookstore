@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BookList from "./BookList";
 
 const Main = () => {
     const [books, setBooks]=useState([
@@ -36,12 +37,7 @@ const Main = () => {
             </thead>
             <tbody>       
             {show && books.map(book =>
-                <tr key={book.id} className={book.completed?"completed":"pending"}>
-                    <td>{book.id}</td>
-                    <td>{book.name}</td>
-                    <td>{book.description} </td>
-                    <td><a className="delete" onClick={()=>handleDelete(book.id)}>Delete</a> </td>
-                </tr>
+                <BookList book={book} handleDelete={handleDelete} />
                 )}
             </tbody>
         </table>      
