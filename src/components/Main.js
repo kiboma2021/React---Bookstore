@@ -26,6 +26,11 @@ const Main = () => {
             <button onClick={handleToggle}>{show?"Hide Books":"Show Books"}</button>
         </div>
         
+        <form>
+            <input type="text" placeholder="Title of the book" name="title" id="title" />
+            <input type="text" placeholder="Description" name="description" id="description" />
+            <button type="submit">Add</button>
+        </form>
         <table>
             <thead>
                 <tr>

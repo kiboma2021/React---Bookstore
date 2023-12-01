@@ -1,5 +1,5 @@
 .main {
-  height: 70vh;
+  min-height: 70vh;
 }
 
 table {
@@ -43,4 +43,30 @@ th, td {
 
 .pending {
   color: rgba(129, 129, 38, 0.959);
+}
+
+form {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input, button {
+  margin: 2rem;
+  height: 3rem;
+  width: 30%;
+  font-size: 2rem;
+  border: none;  
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border-radius: 5rem;
+}
+
+input {
+  background-color: #f3f0f0;
+  border: 2px solid rgb(236, 228, 228);
 }
