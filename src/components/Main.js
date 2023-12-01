@@ -22,10 +22,15 @@ const Main = () => {
     }
 
     const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
 
     function handleInput(event){
         setTitle(event.target.value);
     }
+    function handleDesc(event){
+        setDescription(event.target.value);
+    }
+
   return (
     <section className="main">
         <div className="toogle-btn">
@@ -34,12 +39,12 @@ const Main = () => {
         
         <form>
             <input onChange={handleInput} type="text" placeholder="Title of the book" name="title" id="title" />
-            <input  type="text" placeholder="Description" name="description" id="description" />
+            <input onChange={handleDesc} type="text" placeholder="Description" name="description" id="description" />
             <button type="submit">Add</button>
         </form>
         <div className="userinput">
             <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: </span>  {title}</p>
-            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Description: </span> </p>
+            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Description: </span> {description} </p>
         </div>
         <table>
             <thead>
