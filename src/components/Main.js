@@ -20,6 +20,12 @@ const Main = () => {
     function handleToggle(){
         setShow(!show);
     }
+
+    const [title, setTitle] = useState("");
+
+    function handleInput(event){
+        setTitle(event.target.value);
+    }
   return (
     <section className="main">
         <div className="toogle-btn">
@@ -27,10 +33,14 @@ const Main = () => {
         </div>
         
         <form>
-            <input type="text" placeholder="Title of the book" name="title" id="title" />
-            <input type="text" placeholder="Description" name="description" id="description" />
+            <input onChange={handleInput} type="text" placeholder="Title of the book" name="title" id="title" />
+            <input  type="text" placeholder="Description" name="description" id="description" />
             <button type="submit">Add</button>
         </form>
+        <div className="userinput">
+            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: </span>  {title}</p>
+            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Description: </span> </p>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -42,7 +52,7 @@ const Main = () => {
             </thead>
             <tbody>       
             {show && books.map(book =>
-                <BookList book={book} handleDelete={handleDelete} />
+                <BookList key={book.id} book={book} handleDelete={handleDelete} />
                 )}
             </tbody>
         </table>      

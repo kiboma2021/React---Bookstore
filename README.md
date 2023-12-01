@@ -5,7 +5,7 @@
 
 ### 📖 [React] <a name="about-project"></a>
 
-> The app demonstrates state, useState, Components,Props, Global Level Styling, Component Level Styling, Inline Level Styling and Module Level Styling
+> The app demonstrates state, useState, Components,Props, Global Level Styling, Component Level Styling, Inline Level Styling and Module Level Styling, User Inputs
 
 
 ### Tech Stack <a name="tech-stack"></a>

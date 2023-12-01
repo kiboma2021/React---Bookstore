@@ -70,3 +70,8 @@ input {
   background-color: #f3f0f0;
   border: 2px solid rgb(236, 228, 228);
 }
+
+.userinput {
+  margin-left: 4rem;
+  margin-top: -2rem;
+}
