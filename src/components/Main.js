@@ -22,7 +22,7 @@ const Main = () => {
   return (
     <section className="main">
         <div className="toogle-btn">
-            <button onClick={handleToggle}>Toogle</button>
+            <button onClick={handleToggle}>{show?"Hide Books":"Show Books"}</button>
         </div>
         
         <table>
