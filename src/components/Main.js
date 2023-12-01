@@ -24,7 +24,7 @@ const Main = () => {
                     <td>{book.id}</td>
                     <td>{book.name}</td>
                     <td>{book.description} </td>
-                    <td>Delete </td>
+                    <td><span className="delete">Delete</span> </td>
                 </tr>
                 )}
             </tbody>

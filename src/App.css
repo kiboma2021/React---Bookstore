@@ -9,5 +9,13 @@ table {
 th, td {
   text-align: center;
   border: 1px solid #ccc;
-  
+  padding: 2rem;
+}
+
+.delete {
+  background-color: red;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  color: white;
 }
