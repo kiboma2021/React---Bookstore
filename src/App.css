@@ -75,3 +75,14 @@ input {
   margin-left: 4rem;
   margin-top: -2rem;
 }
+
+.reset {
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  border-radius: 5rem;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

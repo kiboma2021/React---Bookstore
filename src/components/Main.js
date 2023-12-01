@@ -3,11 +3,6 @@ import BookList from "./BookList";
 
 const Main = () => {
     const [books, setBooks]=useState([
-        {id:123, name:"Shreds of tenderness", description:"lorem ipsum", completed:true},
-        {id:124, name:"Shreds of tenderness", description:"lorem ipsum", completed:false},
-        {id:125, name:"Shreds of tenderness", description:"lorem ipsum", completed:false},
-        {id:126, name:"Shreds of tenderness", description:"lorem ipsum", completed:true},
-        {id:127, name:"Shreds of tenderness", description:"lorem ipsum", completed:false},
     ]);
     
     const [show, setShow]=useState(true);
@@ -31,16 +26,23 @@ const Main = () => {
         setDescription(event.target.value);
     }
 
+    function handleSubmit(){
+        const new_book = {}
+        setBooks(...books, new_book)
+
+    }
+
   return (
     <section className="main">
         <div className="toogle-btn">
             <button onClick={handleToggle}>{show?"Hide Books":"Show Books"}</button>
         </div>
         
-        <form>
+        <form onSubmit={handleSubmit}>
             <input onChange={handleInput} type="text" placeholder="Title of the book" name="title" id="title" />
             <input onChange={handleDesc} type="text" placeholder="Description" name="description" id="description" />
             <button type="submit">Add</button>
+            <h3 className="reset">Reset</h3>
         </form>
         <div className="userinput">
             <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: </span>  {title}</p>
