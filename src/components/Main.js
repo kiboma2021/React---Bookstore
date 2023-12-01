@@ -29,8 +29,12 @@ const Main = () => {
     function handleSubmit(){
         const new_book = {}
         setBooks(...books, new_book)
-
     }
+
+    function handleReset(){
+        setTitle("");
+        setDescription("");
+    };
 
   return (
     <section className="main">
@@ -39,10 +43,10 @@ const Main = () => {
         </div>
         
         <form onSubmit={handleSubmit}>
-            <input onChange={handleInput} type="text" placeholder="Title of the book" name="title" id="title" />
-            <input onChange={handleDesc} type="text" placeholder="Description" name="description" id="description" />
+            <input onChange={handleInput} type="text" placeholder="Title of the book" name="title" id="title" value={title} />
+            <input onChange={handleDesc} type="text" placeholder="Description" name="description" id="description" value={description} />
             <button type="submit">Add</button>
-            <h3 className="reset">Reset</h3>
+            <h3 onClick={handleReset} className="reset">Reset</h3>
         </form>
         <div className="userinput">
             <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: </span>  {title}</p>
