@@ -1,12 +1,18 @@
+import { useState } from "react";
 
 const Main = () => {
-    const books=[
+    const [books, setBooks]=useState([
         {id:123, name:"Shreds of tenderness", description:"lorem ipsum"},
         {id:124, name:"Shreds of tenderness", description:"lorem ipsum"},
         {id:125, name:"Shreds of tenderness", description:"lorem ipsum"},
         {id:126, name:"Shreds of tenderness", description:"lorem ipsum"},
         {id:127, name:"Shreds of tenderness", description:"lorem ipsum"},
-    ];
+    ]);
+    
+    function handleDelete(id){
+        console.log("Clicked",id);
+        setBooks(books.filter(book => book.id != id));
+    }
   return (
     <section>
         <table>
@@ -24,7 +30,7 @@ const Main = () => {
                     <td>{book.id}</td>
                     <td>{book.name}</td>
                     <td>{book.description} </td>
-                    <td><span className="delete">Delete</span> </td>
+                    <td><a className="delete" onClick={()=>handleDelete(book.id)}>Delete</a> </td>
                 </tr>
                 )}
             </tbody>
