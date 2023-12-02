@@ -52,7 +52,7 @@ form {
   align-items: center;
 }
 
-input, button {
+input, button, select {
   margin: 2rem;
   height: 3rem;
   width: 30%;

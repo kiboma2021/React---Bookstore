@@ -3,6 +3,7 @@ import BookList from "./BookList";
 
 const Main = () => {
     const [books, setBooks]=useState([
+        {id:1255, name: 'hbhbhb', description: 'hbhbh', completed: true},
     ]);
     
     const [show, setShow]=useState(true);
@@ -18,6 +19,7 @@ const Main = () => {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [status, setStatus] = useState(false);
 
     function handleInput(event){
         setTitle(event.target.value);
@@ -26,14 +28,24 @@ const Main = () => {
         setDescription(event.target.value);
     }
 
-    function handleSubmit(){
-        const new_book = {}
-        setBooks(...books, new_book)
+    function handleSubmit(event){
+        event.preventDefault();
+        const book_id = Math.floor(Math.random()*100000);
+        const new_book = {
+            id:book_id,
+            name: title, 
+            description: description, 
+            completed: Boolean(status)
+        }
+        console.log("-------", new_book)
+        setBooks([...books,new_book])
+        handleReset()
     }
 
     function handleReset(){
         setTitle("");
         setDescription("");
+        setStatus(false);
     };
 
   return (
@@ -45,8 +57,12 @@ const Main = () => {
         <form onSubmit={handleSubmit}>
             <input onChange={handleInput} type="text" placeholder="Title of the book" name="title" id="title" value={title} />
             <input onChange={handleDesc} type="text" placeholder="Description" name="description" id="description" value={description} />
-            <button type="submit">Add</button>
+            <select onChange={(event)=>setStatus(event.target.value)} value={status}>
+                <option value="false">Pending</option>
+                <option value="true">Completed</option>
+            </select>
             <h3 onClick={handleReset} className="reset">Reset</h3>
+            <button type="submit">Add</button>
         </form>
         <div className="userinput">
             <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: </span>  {title}</p>
