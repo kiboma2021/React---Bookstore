@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT DESCRIPTION -->
-![Alt text](<Screenshot from 2023-12-01 09-50-48-2.png>)
+![Alt text](<Screenshot from 2023-12-02 13-02-03.png>)
 
 ### 📖 [React] <a name="about-project"></a>
 
