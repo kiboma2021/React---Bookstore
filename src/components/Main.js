@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import BookList from "./BookList";
 
 const Main = () => {
@@ -22,7 +22,9 @@ const Main = () => {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [status, setStatus] = useState(false);
+    //const [status, setStatus] = useState(false);
+
+    const statusVal = useRef(false);
 
     function handleInput(event){
         setTitle(event.target.value);
@@ -38,8 +40,9 @@ const Main = () => {
             id:book_id,
             name: title, 
             description: description, 
-            completed: Boolean(status)
+            completed:  statusVal.current.value ==='true'
         }
+        console.log("-------", statusVal.current.value)
         console.log("-------", new_book)
         setBooks([...books,new_book])
         handleReset()
@@ -48,7 +51,7 @@ const Main = () => {
     function handleReset(){
         setTitle("");
         setDescription("");
-        setStatus(false);
+        statusVal.current.value=false;
     };
 
   return (
@@ -60,7 +63,7 @@ const Main = () => {
         <form onSubmit={handleSubmit}>
             <input onChange={handleInput} type="text" placeholder="Title of the book" name="title" id="title" value={title} />
             <input onChange={handleDesc} type="text" placeholder="Description" name="description" id="description" value={description} />
-            <select onChange={(event)=>setStatus(event.target.value)} value={status}>
+            <select ref={statusVal}>
                 <option value="false">Pending</option>
                 <option value="true">Completed</option>
             </select>
