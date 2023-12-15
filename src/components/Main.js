@@ -14,26 +14,7 @@ const Main = ({books,setBooks}) => {
     }
 
 
-    function handleSubmit(event){
-        event.preventDefault();
-        // const book_id = Math.floor(Math.random()*100000);
-        // const new_book = {
-        //     id:book_id,
-        //     name: title, 
-        //     description: description, 
-        //     completed:  statusVal.current.value ==='true'
-        // }
-        // console.log("-------", statusVal.current.value)
-        // console.log("-------", new_book)
-        // setBooks([...books,new_book])
-        handleReset()
-    }
 
-    function handleReset(){
-        // setTitle("");
-        // setDescription("");
-        //statusVal.current.value=false;
-    };
 
   return (
     <section className="main">
@@ -44,8 +25,9 @@ const Main = ({books,setBooks}) => {
         <AddTask 
         userinput={userinput} 
         setUserInput={setUserInput} 
-        handleSubmit={handleSubmit} 
-        handleReset={handleReset} 
+        books={books} 
+        setBooks={setBooks} 
+
         />
 
         <BookList 
