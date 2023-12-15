@@ -27,9 +27,9 @@ const AddTask = ({userinput,setUserInput,books,setBooks}) => {
   return (
     <div>
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Title of the book" name="title" />
-            <input type="text" placeholder="Description" name="description" />
-            <select name="status">
+            <input type="text" placeholder="Title of the book" name="title" value={userinput.name} />
+            <input type="text" placeholder="Description" name="description" value={userinput.description} />
+            <select name="status" value={userinput.completed}>
                 <option value="false">Pending</option>
                 <option value="true">Completed</option>
             </select>
@@ -38,8 +38,8 @@ const AddTask = ({userinput,setUserInput,books,setBooks}) => {
         </form>
 
         <div className="userinput">
-            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: </span>  </p>
-            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Description: </span>  </p>
+            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: {userinput.name} </span>  </p>
+            <p> <span style={{fontSize:"1.5rem", color:"red"}}>Description: </span>{userinput.description}  </p>
         </div>        
     </div>
 
