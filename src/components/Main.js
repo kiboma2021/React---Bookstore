@@ -34,7 +34,10 @@ const Main = ({books,setBooks}) => {
         books={books} 
         setBooks={setBooks} 
         handleDelete={handleDelete} 
-        show={show} />
+        show={show} 
+        userinput={userinput} 
+        setUserInput={setUserInput}         
+        />
         
     </section>
   )

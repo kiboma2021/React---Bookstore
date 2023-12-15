@@ -1,5 +1,9 @@
 
-const BookList = ({ show,books,setBooks,handleDelete}) => {
+const BookList = ({ show,books,setBooks,handleDelete,userinput,setUserInput}) => {
+  function handleEdit(id) {
+    setUserInput(books.find(book => book.id === id));
+    console.log(userinput);
+  }
   return (
 
   <table>
@@ -17,7 +21,10 @@ const BookList = ({ show,books,setBooks,handleDelete}) => {
           <td>{book.id}</td>
           <td>{book.name}</td>
           <td>{book.description} </td>
-          <td><span className="delete" onClick={()=>handleDelete(book.id)}>Delete</span> </td>
+          <td>
+            <span onClick={()=>handleEdit(book.id)} style={{marginLeft:"0.8rem",color:"red"}} ><i className="fa fa-edit"></i></span> 
+            <span onClick={()=>handleDelete(book.id)} style={{color:"red"}}><i className="fa fa-trash"></i></span> 
+          </td>
         </tr>
         ))}    
     </tbody>

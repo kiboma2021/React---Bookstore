@@ -3,16 +3,20 @@ import React from 'react'
 const AddTask = ({userinput,setUserInput,books,setBooks}) => {
     function handleSubmit(e){
         e.preventDefault();
-        const book_id = Math.floor(Math.random()*100000);
-        const new_book = {
-            id:book_id,
-            name: e.target.title.value, 
-            description: e.target.description.value, 
-            completed:  e.target.status.value ==='true'
-        }
-        console.log("-------", new_book)
-        setBooks([...books,new_book])
+        if (userinput.id){
 
+        }else {
+            const book_id = Math.floor(Math.random()*100000);
+            const new_book = {
+                id:book_id,
+                name: e.target.title.value, 
+                description: e.target.description.value, 
+                completed:  e.target.status.value ==='true'
+            }
+            console.log("-------", new_book)
+            setBooks([...books,new_book])
+
+        }
     }
 
     function handleReset(){
