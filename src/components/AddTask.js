@@ -1,6 +1,11 @@
 import React from 'react'
 
 const AddTask = ({userinput,setUserInput,handleSubmit,handleReset}) => {
+    function handleInput(e){
+        setUserInput({
+            
+        })
+    }
   return (
     <div>
         <form onSubmit={handleSubmit}>
@@ -13,7 +18,7 @@ const AddTask = ({userinput,setUserInput,handleSubmit,handleReset}) => {
             <h3 onClick={handleReset} className="reset">Reset</h3>
             <button type="submit">Add</button>
         </form>
-        
+
         <div className="userinput">
             <p> <span style={{fontSize:"1.5rem", color:"red"}}>Name of the Book: </span>  </p>
             <p> <span style={{fontSize:"1.5rem", color:"red"}}>Description: </span>  </p>
