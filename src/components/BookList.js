@@ -1,5 +1,5 @@
 
-const BookList = ({books,handleDelete}) => {
+const BookList = ({ show,books,setBooks,handleDelete}) => {
   return (
 
   <table>
@@ -12,7 +12,7 @@ const BookList = ({books,handleDelete}) => {
           </tr>
       </thead>
       <tbody>
-        {books && books.map((book) =>(
+        {show && books && books.map((book) =>(
         <tr key={book.id} className={book.completed?"completed":"pending"}>
           <td>{book.id}</td>
           <td>{book.name}</td>

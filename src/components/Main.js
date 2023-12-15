@@ -51,7 +51,8 @@ const Main = ({books,setBooks}) => {
         <BookList 
         books={books} 
         setBooks={setBooks} 
-        handleDelete={handleDelete} />
+        handleDelete={handleDelete} 
+        show={show} />
         
     </section>
   )
