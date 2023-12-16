@@ -4,6 +4,15 @@ const AddTask = ({userinput,setUserInput,books,setBooks}) => {
     function handleSubmit(e){
         e.preventDefault();
         if (userinput.id){
+            const editedTasks=books.map((book) => (
+                book.id === userinput.id?{
+                    id:userinput.id,
+                    name:e.target.title.value,
+                    description:e.target.description.value,
+                    completed: e.target.status.value ==='true'
+                }:book
+            ))
+            setBooks(editedTasks)
 
         }else {
             const book_id = Math.floor(Math.random()*100000);
@@ -20,16 +29,14 @@ const AddTask = ({userinput,setUserInput,books,setBooks}) => {
     }
 
     function handleReset(){
-        // setTitle("");
-        // setDescription("");
-        //statusVal.current.value=false;
+        setUserInput("");
     }
   return (
     <div>
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Title of the book" name="title" value={userinput.name} />
-            <input type="text" placeholder="Description" name="description" value={userinput.description} />
-            <select name="status" value={userinput.completed}>
+            <input type="text" placeholder="Title of the book" name="title" value={userinput.name} onChange={e=>setUserInput({...userinput.name,name:e.target.value})}/>
+            <input type="text" placeholder="Description" name="description" value={userinput.description} onChange={e=>setUserInput({...userinput.description, description:e.target.value})} />
+            <select name="status" value={userinput.completed} onChange={e=>setUserInput({...userinput.completed,completed:e.target.value})} >
                 <option value="false">Pending</option>
                 <option value="true">Completed</option>
             </select>
