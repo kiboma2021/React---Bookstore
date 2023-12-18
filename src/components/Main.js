@@ -13,9 +13,6 @@ const Main = ({books,setBooks}) => {
         setBooks(books.filter(book => book.id !== id));
     }
 
-
-
-
   return (
     <section className="main">
         <div className="toogle-btn">

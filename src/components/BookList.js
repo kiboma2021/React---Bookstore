@@ -2,7 +2,7 @@
 const BookList = ({ show,books,setBooks,handleDelete,userinput,setUserInput}) => {
   function handleEdit(id) {
     setUserInput(books.find(book => book.id === id));
-    console.log(userinput);
+
   }
   return (
 
