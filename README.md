@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT DESCRIPTION -->
-![Alt text](<Screenshot from 2023-12-02 13-02-03.png>)
+![Alt text](<Screenshot from 2023-12-18 10-04-29.png>)
 
 ### 📖 [React] <a name="about-project"></a>
 
@@ -14,7 +14,7 @@
 - Css
 
 
-## 🚀 <a href="https://kiboma2021.github.io/React---Bookstore/" target="_blank">Live Demo Link</a>
+## 🚀 <a href="https://kibs-bookstore.netlify.app//" target="_blank">Live Demo Link</a>
 
 
 ## 👥 Authors <a name="authors"></a>
