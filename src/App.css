@@ -86,3 +86,21 @@ input {
   justify-content: center;
   align-items: center;
 }
+
+.nav-bar {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  background-color: aquamarine;
+  padding: 1rem;
+  border-radius: 2rem;
+}
