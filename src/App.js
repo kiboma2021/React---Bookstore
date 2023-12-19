@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Profile from './components/Profile';
 import BookDetail from './components/BookDetail';
 import './App.css';
+import NoRouteFound from './components/NoRouteFound';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='contact' element={<Contact />} ></Route>
         <Route path='profile' element={user?<Profile /> :<Navigate to='/' /> }></Route>
         <Route path='book/:id' element={<BookDetail userinput={userinput} setUserInput={setUserInput}  />} ></Route>
+        <Route path='*' element={<NoRouteFound />} ></Route>
 
       </Routes>
       
