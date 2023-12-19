@@ -5,12 +5,14 @@ import Footer from './components/Footer';
 import Main from './components/Main';
 import Contact from './components/Contact';
 import Profile from './components/Profile';
-
+import BookDetail from './components/BookDetail';
 import './App.css';
+
 
 
 function App() {
   const [books, setBooks]=useState(JSON.parse(localStorage.getItem("books"))||[]);
+  const [userinput, setUserInput]=useState({})
 
   const user = false;
 
@@ -23,9 +25,10 @@ function App() {
     <div className="App">
       <Header books={books} />
       <Routes>
-        <Route path='/' element={<Main books={books} setBooks={setBooks} />}> </Route>
+        <Route path='/' element={<Main books={books} setBooks={setBooks} userinput={userinput} setUserInput={setUserInput} />}> </Route>
         <Route path='contact' element={<Contact />} ></Route>
         <Route path='profile' element={user?<Profile /> :<Navigate to='/' /> }></Route>
+        <Route path='book/:id' element={<BookDetail userinput={userinput} setUserInput={setUserInput}  />} ></Route>
 
       </Routes>
       

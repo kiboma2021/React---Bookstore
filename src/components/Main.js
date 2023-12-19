@@ -2,13 +2,10 @@ import { useState } from "react";
 import BookList from "./BookList";
 import AddTask from "./AddTask";
 
-const Main = ({books,setBooks}) => {
+const Main = ({books,setBooks,userinput,setUserInput}) => {
     
     const [show, setShow]=useState(true);
-    const [userinput, setUserInput]=useState({})
-
-
-
+    
     function handleDelete(id){
         setBooks(books.filter(book => book.id !== id));
     }

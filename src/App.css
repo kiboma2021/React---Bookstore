@@ -104,3 +104,10 @@ input {
   padding: 1rem;
   border-radius: 2rem;
 }
+
+.bookPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

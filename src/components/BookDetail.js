@@ -1,9 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-const BookDetail = () => {
+const BookDetail = ({userinput}) => {
+  const params = useParams();
+  console.log(params)
   return (
-    <div>
-        <h2>Book detail Page</h2>
+    <div className='bookPage'>
+        <h2>{userinput.name}</h2>
+        <p>{userinput.description}</p>
       
     </div>
   )

@@ -6,7 +6,7 @@ import Logo from '../assets/logo.jpg'
 const Header = ({books}) => {
   return (
     <section className={styles.header}>
-        <Link to='/' className={styles.home} end>
+        <Link to='/' className={styles.home}>
             <img className={styles.logo} src={Logo} alt="" />
             <p>Imara Bookshop</p>
         </Link>
