@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -10,6 +10,7 @@ const Contact = () => {
   }
   return (
     <div>
+      <Outlet />
         <form className='contact' onSubmit={handleSubmit}>
             <input type="text" placeholder='Subject' maxLength={100} autoComplete='false' />
             <input type="text" placeholder='Email' maxLength={50} autoComplete='false' />
